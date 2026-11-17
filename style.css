@@ -1,1 +1,61 @@
+/* Custom Numpad Buttons */
+.num-btn {
+  background-color: #1e293b;
+  color: #f8fafc;
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  border-radius: 0.85rem;
+  border: 1px solid #334155;
+  box-shadow: 0 3px 0 #0f172a;
+  transition: transform 0.06s ease, background-color 0.1s ease;
+  touch-action: manipulation;
+}
 
+.num-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 #0f172a;
+  background-color: #4f46e5;
+}
+
+/* Monster Idle Floating */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float 2.4s ease-in-out infinite;
+}
+
+/* Screen / Card Shake on Wrong Answer or Monster Hit */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px) rotate(-2deg); }
+  40% { transform: translateX(8px) rotate(2deg); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+.animate-shake {
+  animation: shake 0.32s ease-in-out;
+}
+
+/* Floating Damage Text */
+@keyframes dmgPop {
+  0% { opacity: 1; transform: translateY(0) scale(0.7); }
+  30% { opacity: 1; transform: translateY(-18px) scale(1.2); }
+  100% { opacity: 0; transform: translateY(-45px) scale(1); }
+}
+.dmg-popup {
+  position: absolute;
+  font-weight: 900;
+  pointer-events: none;
+  animation: dmgPop 0.7s ease-out forwards;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Fever Glow */
+.fever-glow {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.45);
+  border-color: #f59e0b !important;
+}
